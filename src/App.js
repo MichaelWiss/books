@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import BookCreate from './components/BookCreate';
 
 
 function App() {
@@ -9,7 +10,9 @@ function App() {
     };
 
 
-    return <div>App</div>;
+    return <div>
+        <BookCreate onCreate={createBook}/>
+    </div>;
 }
 
 export default App;
