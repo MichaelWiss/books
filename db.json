@@ -1,3 +1,8 @@
 {
-    "books": []
+  "books": [
+    {
+      "title": "Genghis Khan",
+      "id": 1
+    }
+  ]
 }
