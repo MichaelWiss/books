@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import BookCreate from './components/BookCreate';
 import BookList from './components/BookList';
@@ -7,13 +7,18 @@ import BookList from './components/BookList';
 function App() {
     const [books, setBooks] = useState([]);
 
+    const fetchBooks = async () => {
+        const response = await axios.get('http//localhost:3001/books');
+        setBooks(response.data);
+    }
+
     useEffect(() => {
         fetchBooks();
     }, []);
 
     const editBookById = async (id, newTitle) => {
-        await axios.put(`http://localhost:3001/books/${id}`, {
-            title: newTitle
+        const response = await axios.put(`http://localhost:3001/books/${id}`, {
+            title: newTitle,
         });
 
         console.log(response);
