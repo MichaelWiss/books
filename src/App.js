@@ -7,10 +7,16 @@ import BookList from './components/BookList';
 function App() {
     const [books, setBooks] = useState([]);
 
+    useEffect(() => {
+        fetchBooks();
+    }, []);
+
     const editBookById = async (id, newTitle) => {
         await axios.put(`http://localhost:3001/books/${id}`, {
             title: newTitle
-        })
+        });
+
+        console.log(response);
 
         const updatedBooks = books.map((book) => {
             if (book.id === id) {
@@ -22,9 +28,7 @@ function App() {
 
         setBooks(updatedBooks);
 
-        useEffect(() => {
-            fetchBooks();
-        }, []);
+       
     };
 
     const deleteBookById = (id) => {
