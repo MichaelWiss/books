@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import BookCreate from './components/BookCreate';
 import BookList from './components/BookList';
@@ -8,7 +8,7 @@ function App() {
     const [books, setBooks] = useState([]);
 
     const fetchBooks = async () => {
-        const response = await axios.get('http//localhost:3001/books');
+        const response = await axios.get('http://localhost:3001/books');
 
         setBooks(response.data);
     };
