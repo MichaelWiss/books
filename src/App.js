@@ -9,8 +9,9 @@ function App() {
 
     const fetchBooks = async () => {
         const response = await axios.get('http//localhost:3001/books');
+
         setBooks(response.data);
-    }
+    };
 
     useEffect(() => {
         fetchBooks();
@@ -32,8 +33,6 @@ function App() {
         });
 
         setBooks(updatedBooks);
-
-       
     };
 
     const deleteBookById = (id) => {
@@ -49,13 +48,8 @@ function App() {
             title,
         });
 
-        console.log(response);
 
-        const updatedBooks = [
-            ...books,
-           response.data
-        ];
-
+        const updatedBooks = [...books, response.data];
         setBooks(updatedBooks);
     };
 
