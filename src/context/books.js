@@ -49,9 +49,17 @@ function Provider({ children }) {
         const updatedBooks = [...books, response.data];
         setBooks(updatedBooks);
     };
+
+    const valueToShare = {
+        books,
+        deleteBookById,
+        editBookById,
+        createBook,
+        fetchBooks
+    };
    
 
-    return <BooksContext.Provider value={{}}>
+    return <BooksContext.Provider value={valueToShare}>
         {children}
     </BooksContext.Provider>
 
