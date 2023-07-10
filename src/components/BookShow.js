@@ -11,7 +11,7 @@ function BookShow({ book }) {
     };
 
     const handleEditClick = () => {
-            setShowEdit(!showEdit);
+        setShowEdit(!showEdit);
     };
 
     const handleSubmit = () => {
