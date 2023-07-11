@@ -5,7 +5,7 @@ import useBooksContext from "../hooks/use-books-context";
 
 function BookEdit({ book, onSubmit }) {
     const [title, setTitle] = useState(book.title);
-    const { editBookById } = useBooksContext;
+    const { editBookById } = useBooksContext();
 
     const handleChange = (event) => {
         setTitle(event.target.value);
